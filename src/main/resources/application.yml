@@ -1,0 +1,30 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: notification-service
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+app:
+  topics:
+    account-opened: account-opened
+    customer-kyc-approved: customer-kyc-approved
+    loan-disbursed: loan-disbursed
+    payment-completed: payment-completed
+    investment-applied: investment-applied
+    fraud-alert: fraud-alert
+
+services:
+  account-service:
+    url: http://localhost:8081
+  customer-service:
+    url: http://localhost:8083
+  sms-gateway:
+    url: http://localhost:8096
