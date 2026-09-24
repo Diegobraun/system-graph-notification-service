@@ -4,6 +4,10 @@ Serviço de notificações. Só consome: escuta seis tópicos com **spring-kafka
 cliente. Descobre o dono da conta no account-service com **OpenFeign**, busca o contato no customer-service com
 **HTTP Interface (`@HttpExchange`)** e manda SMS pelo sms-gateway com **`RestClient`**.
 
+![notification-service na interface do system-graph](docs/system-graph.jpg)
+
+*O notification-service na [interface visual](https://github.com/Diegobraun/system-graph-poc#interface-visual) da plataforma: tudo que ele chama, expõe, publica e consome.*
+
 ## Contratos
 
 | Tipo | Contrato | Detalhe |
